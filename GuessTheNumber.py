@@ -16,11 +16,9 @@ print('快來玩玩0A0B猜數字遊戲~')
 start=True
 while  start :
     useAnswer=input(f'請輸入{len(str(answer))}位數:')
-    # str.isnumeric
     if len(str(answer)) != len(useAnswer):
         print('輸入長度不符唷')
         continue
-    # useAnswer='4321'
 
     answerList = []
     useAnswerList = []
@@ -34,7 +32,6 @@ while  start :
         useAnswerList.append(j)
 
     for i in range(len(answerList)):
-        # for j in range(len(useAnswerList)):
         if (answerList[i] == useAnswerList[i]):
             a+=1
             answerList[i]='-'
