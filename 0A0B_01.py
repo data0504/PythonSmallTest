@@ -3,9 +3,9 @@ import random
 def winOrLose(win,lose):
     for i in range(len(answerList)):
         for j in range(len(useAnswerList)):
-            if (i==win and j==lose) or b==len(answerList) :
+            if (i == win and j == lose) or lose==len(answerList) :
                 return 0
-        if len(answerList) == a:
+        if len(answerList) == win:
             return 1
 
 answer = random.randint(1000,9999)
