@@ -22,8 +22,8 @@ while  start :
         continue
     # useAnswer='4321'
 
-    answerList=[]
-    useAnswerList=[]
+    answerList = []
+    useAnswerList = []
 
     a=0
     b=0
