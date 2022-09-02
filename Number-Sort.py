@@ -44,5 +44,3 @@ class smallSort():
         
 sort= smallSort(list)
 print(sort.parseEnd())
-
-
