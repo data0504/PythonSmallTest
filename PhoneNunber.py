@@ -5,7 +5,7 @@ class randomPhoneNumber():
         self.rows= rows
         self.Limit= limit
         self.country= country
-        self.destFile= rf'homeworks\1.PhoneNumber_SmallTest\RandomPhoneNumber_{country}_{rows}rows.txt'
+        self.destFile= rf'work\1.PhoneNumber_SmallTest\RandomPhoneNumber_{country}_{rows}rows.txt'
 
     def number(self):
         _list= [0,1,2,3,4,5,6,7,8,9]
