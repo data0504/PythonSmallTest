@@ -64,5 +64,6 @@ class testPaper():
                 self.checkAnswer()
         self.result()
 
-TP= testPaper(r'homeworks\6.TestPaper_SmallTest\testPaper.csv')
+testPaperPath= r'homeworks\6.TestPaper_SmallTest\testPaper.csv'
+TP= testPaper(testPaperPath)
 TP.execution()
