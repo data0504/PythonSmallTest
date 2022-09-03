@@ -1,6 +1,6 @@
 class testPaper():
-    def __init__(self):
-        self.path= r'homeworks\6.TestPaper_SmallTest\testPaper.csv'
+    def __init__(self,path):
+        self.path= path
         self.csvReader= None
         self.start= True
         self.useAnswer= None
@@ -64,5 +64,5 @@ class testPaper():
                 self.checkAnswer()
         self.result()
 
-TP= testPaper()
+TP= testPaper(r'homeworks\6.TestPaper_SmallTest\testPaper.csv')
 TP.execution()
