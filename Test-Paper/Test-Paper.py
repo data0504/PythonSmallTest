@@ -12,7 +12,7 @@ class testPaper():
     def Title(self):
         print('---簡易試卷---')
 
-    def csvForPy(self):
+    def readCsv(self):
         _filePaper= open(self.path,'r',encoding='big5')
         self.csvReader= _filePaper.readlines()
         _filePaper.close()
