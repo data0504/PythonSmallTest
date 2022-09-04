@@ -65,12 +65,12 @@ class pyPlot():
         reversLen= len(self.dateList)-1
         self.dateList[reversLen].finalGoodsTime= _DAresult[0]
         self.dateList[reversLen].finalGoodsPrice= _DAresult[1]
-        ...
+        
     def pltData(self):
         plt.title("18years")
         reversLen= len(self.dateList)-1
         plt.plot(self.dateList[reversLen].finalGoodsTime, self.dateList[reversLen].finalGoodsPrice)
-        ...
+        
         plt.plot()
         plt.legend(['Money']) 
         plt.grid(True)
@@ -81,6 +81,5 @@ class pyPlot():
         self.addData()
         self.pltData()
 
-DA= DataAnalysis(r'homeworks\4.PythonToCsv_SmallTest\18.csv')
-pyPlot().execution()
+DA= DataAnalysis(r'Pytohn-Small-Test\18yars_plot\18.csv')
 pyPlot().execution()
