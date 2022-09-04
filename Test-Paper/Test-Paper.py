@@ -7,7 +7,7 @@ class testPaper():
         self.paperAnswer= None
         self.correct= 0
         self.wrong= 0
-        self.null= 0
+        self.answernull= 0
 
     def Title(self):
         print('---簡易試卷---')
@@ -46,11 +46,11 @@ class testPaper():
                 self.wrong+= 1
                 self.start= False
         else:
-            self.null+= 1
+            self.answernull+= 1
             print('輸入錯誤。')
 
     def result(self):
-        print(f'總{len(self.csvReader)}題; 對{self.correct}題; 錯{self.wrong}題; 無效{self.null}次。')
+        print(f'總{len(self.csvReader)}題; 對{self.correct}題; 錯{self.wrong}題; 無效{self.answernull}次。')
         print('試卷結束。')
     
     def execution(self):
