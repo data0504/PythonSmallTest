@@ -22,7 +22,7 @@ class randomPhoneNumber():
                     resolve+= f'{i}'
                 print(resolve)
                 f.write(''.join(resolve+ "\n"))
-        f.close()
+            f.close()
 
 rows= 10
 numberLimit= 8
