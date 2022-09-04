@@ -82,4 +82,5 @@ class pyPlot():
         self.pltData()
 
 DA= DataAnalysis(r'Pytohn-Small-Test\18yars_plot\18.csv')
+# 創建以時間為基底的 條件。
 pyPlot().execution()
