@@ -55,7 +55,7 @@ class testPaper():
     
     def execution(self):
         self.Title()
-        self.csvForPy()
+        self.readCsv()
         
         for i in range(len(self.csvReader)):
             self.unpick(i)
