@@ -1,5 +1,5 @@
 # 字串解法。
-class MinConvertSec:
+class MinConvert:
     def __init__(self):
         self.min = 0
         self.sec = 0
@@ -58,5 +58,5 @@ class MinConvertSec:
             self.resolve( self.parse( self.UseInput() ) )
             self.clear()
 
-MCS = MinConvertSec()
+MCS = MinConvert()
 MCS.execution()
