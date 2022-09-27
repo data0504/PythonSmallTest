@@ -38,22 +38,18 @@ class MinConvertSec:
             self.min = _convertNumber[0 : _convertDifference]
             self.sec = _convertNumber[_convertDifference: ]
         
-        correct = _convertNumberLen < 5
-        self.start = correct == True
-        return {"min": self.min, "sec": self.sec, "startStart": correct}
+        _correct = _convertNumberLen < 5
+        self.start = _correct == True
+        return _correct
 
-    def resolve(self, json):
-        _min = json['min']
-        _sec = json['sec']
-        _startState = json['startStart']
-
+    def resolve(self, state : bool):
         _resolve : str
         _resolve = ''
-        _resolve += f'{_min}分'
-        _resolve += f'{_sec}秒'
+        _resolve += f'{self.min}分'
+        _resolve += f'{self.sec}秒'
 
         print(_resolve)
-        if _startState == False:
+        if state == False:
             print('好了~ 好了~ 別 Now了!，還有很多有意義的事可以做XDD。')   
         
     def execution(self):
