@@ -1,5 +1,4 @@
 import unittest
-
 # server 主導一切，的寫。
 
 class Class1:
