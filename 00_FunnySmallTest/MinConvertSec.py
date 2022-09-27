@@ -48,9 +48,9 @@ class MinConvert:
         _resolve += f'{self.min}分'
         _resolve += f'{self.sec}秒'
 
-        print(_resolve)
         if state == False:
-            print('好了~ 好了~ 別 Now了!，還有很多有意義的事可以做XDD。')   
+            print('好了~ 好了~ 別 Now了!，還有很多有意義的事可以做XDD。')
+        print(_resolve)   
         
     def execution(self):
         self.title()
