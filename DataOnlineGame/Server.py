@@ -96,6 +96,10 @@ class MySQLsyntax:
 
         self.cursor = self.con.cursor()
 
+    def closeMySQL(self):
+        self.con.close()
+        self.cursor.close()
+
     def SelectTable(self):
         return "SELECT * FROM accounts;"
 
@@ -220,14 +224,18 @@ class AccountVerify:
             CAD = CreateAccountData()
             CAD.setMySqlDB(_pendingList)
             self.AccountSave.append(CAD)
+            
+        self.MySQLsyntax.closeMySQL()
 
     def setToDBMySQL(self, setValue): # Todo : self.AccountSet Update to MySQLTableAccount.
         self.MySQLsyntax.cursor.execute(self.MySQLsyntax.UpDate(), setValue.getDBMySQL())
         self.MySQLsyntax.con.commit() # 確認資料有存入資料庫
+        self.MySQLsyntax.closeMySQL()
 
     def insetForMySQL(self, setValue): # Todo : self.AccountInset signUp save MySQLTableAccount.
         self.MySQLsyntax.cursor.execute(self.MySQLsyntax.InsetData(), setValue.getDBMySQLCreate())
         self.MySQLsyntax.con.commit() # 確認資料有存入資料庫
+        self.MySQLsyntax.closeMySQL()
 
     def loadFromDBTxt(self): # Todo : FetchallAccount.txt append self.AccountSave.
         _txt = r'PythonSmallTest\DataOnlineGame\Account.txt'
