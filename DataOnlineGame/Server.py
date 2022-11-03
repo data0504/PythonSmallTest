@@ -228,11 +228,13 @@ class AccountVerify:
         self.MySQLsyntax.closeMySQL()
 
     def setToDBMySQL(self, setValue): # Todo : self.AccountSet Update to MySQLTableAccount.
+        self.MySQLsyntax.__init__()
         self.MySQLsyntax.cursor.execute(self.MySQLsyntax.UpDate(), setValue.getDBMySQL())
         self.MySQLsyntax.con.commit() # 確認資料有存入資料庫
         self.MySQLsyntax.closeMySQL()
 
     def insetForMySQL(self, setValue): # Todo : self.AccountInset signUp save MySQLTableAccount.
+        self.MySQLsyntax.__init__()
         self.MySQLsyntax.cursor.execute(self.MySQLsyntax.InsetData(), setValue.getDBMySQLCreate())
         self.MySQLsyntax.con.commit() # 確認資料有存入資料庫
         self.MySQLsyntax.closeMySQL()
