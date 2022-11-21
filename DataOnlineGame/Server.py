@@ -224,20 +224,27 @@ class AccountVerify:
             CAD = CreateAccountData()
             CAD.setMySqlDB(_pendingList)
             self.AccountSave.append(CAD)
-            
-        self.MySQLsyntax.closeMySQL()
+        '''   
+        self.MySQLsyntax.closeMySQL() # 概念 : opening server持續連線 / 開開關關很吃效能。
+        ''' 
 
     def setToDBMySQL(self, setValue): # Todo : self.AccountSet Update to MySQLTableAccount.
         self.MySQLsyntax.__init__()
         self.MySQLsyntax.cursor.execute(self.MySQLsyntax.UpDate(), setValue.getDBMySQL())
         self.MySQLsyntax.con.commit() # 確認資料有存入資料庫
-        self.MySQLsyntax.closeMySQL()
+
+        ''' 
+        self.MySQLsyntax.closeMySQL() # 概念 : opening server持續連線 / 開開關關很吃效能。
+        ''' 
 
     def insetForMySQL(self, setValue): # Todo : self.AccountInset signUp save MySQLTableAccount.
         self.MySQLsyntax.__init__()
         self.MySQLsyntax.cursor.execute(self.MySQLsyntax.InsetData(), setValue.getDBMySQLCreate())
         self.MySQLsyntax.con.commit() # 確認資料有存入資料庫
-        self.MySQLsyntax.closeMySQL()
+
+        '''
+        self.MySQLsyntax.closeMySQL() # 概念 : opening server持續連線 / 開開關關很吃效能。
+        '''
 
     def loadFromDBTxt(self): # Todo : FetchallAccount.txt append self.AccountSave.
         _txt = r'PythonSmallTest\DataOnlineGame\Account.txt'
