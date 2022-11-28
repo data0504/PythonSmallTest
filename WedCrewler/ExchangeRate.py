@@ -25,11 +25,11 @@ for i in defs:
         if b in country_code2:
             exchangeRate.append(i['現金匯率'][j+1])
 
-# 台灣幣值 換 各國幣值匯率。
+# 台灣幣值 換 各國家單一商品價格。
 for i in range(len(commodityPrice)):
     if i != 0 :
-        print(f'{country_code1[i]} {float(commodityPrice[i]) * float(exchangeRate[i-1])}')
+        print(f'{country_code1[i]} TWD : {float(commodityPrice[i]) * float(exchangeRate[i-1])}')
     else:
-        print(f'{country_code1[i]} {commodityPrice[i] * 1 }')
+        print(f'{country_code1[i]} TWD : {commodityPrice[i] * 1 }')
 
     print(" ")
