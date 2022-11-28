@@ -1,20 +1,19 @@
 import requests, re, pandas, time
 from bs4 import BeautifulSoup
 
-
 # 各國家單一商品價格。
 country_code1  = ['tw', 'us', 'uk', 'jp', 'kr']
 commodityPrice = []
 for country  in country_code1:
     res = requests.get(f'https://{country}.burberry.com/embroidered-oak-leaf-crest-cotton-pique-polo-shirt-p80651781')
+
+    time.sleep(1)
+    
     soup = BeautifulSoup(res.text, 'html.parser')
     priceText = soup.select_one('.product-info-panel__price').text
     text = float("".join(re.findall(r'\d+\.?\d*',priceText)))
     commodityPrice.append(text)
-'''
-print(commodityPrice)
-'''
-
+    
 # 台灣 與 各國幣值匯率。
 country_code2  = ['USD', 'GBP', 'JPY', 'KRW']
 exchangeRate = []
@@ -25,9 +24,6 @@ for i in defs:
         b = re.search('[a-zA-Z]+',str(a), flags=re.I).group(0)
         if b in country_code2:
             exchangeRate.append(i['現金匯率'][j+1])
-'''
-print(exchangeRate)
-'''
 
 # 台灣幣值 換 各國幣值匯率。
 for i in range(len(commodityPrice)):
@@ -37,4 +33,3 @@ for i in range(len(commodityPrice)):
         print(f'{country_code1[i]} {commodityPrice[i] * 1 }')
 
     print(" ")
-    time.sleep(0.1)
