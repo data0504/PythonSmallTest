@@ -12,13 +12,28 @@ test_json_str = [{
     "rebate": 5.0
 }]
 
+print(f'{"groupby_itemgetter":=^50}')
 for key, value in groupby(test_json_str, itemgetter('id')):
     print(key)
     for i in list(value):
         print(i["PasswordStr"])
         print(i["initToken"])
-        print(i["SignUpTime"])
+        print(i["initToken"])
+        print(i["SignInTime"])
         print(i["SignInTime"])
         print(i["pay"])
         print(i["getCoin"])
         print(i["rebate"])
+
+
+print(f'{"itemgetter":=^50}')
+for row in test_json_str:
+    print(str(itemgetter('id')(row)))
+
+    print(str(itemgetter('PasswordStr')(row)))
+    print(str(itemgetter('initToken')(row)))
+    print(str(itemgetter('SignUpTime')(row)))
+    print(str(itemgetter('SignInTime')(row)))
+    print(str(itemgetter('pay')(row)))
+    print(str(itemgetter('getCoin')(row)))
+    print(str(itemgetter('rebate')(row)))
