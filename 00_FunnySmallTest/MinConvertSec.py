@@ -1,8 +1,8 @@
 import re
 import datetime
 
-class MinConvert:
-    """搞笑分鐘轉換"""
+class minConvertMethod:
+    """古怪分鐘轉換方法"""
     def __init__(self) -> None:
         """建構式"""
         self.min: int = 0
@@ -10,6 +10,10 @@ class MinConvert:
         self.convertUnit: int = 60
         self.firstTime:datetime.datetime = datetime.datetime.now()
         self.start: bool = True
+
+    def gameState(self) -> bool:
+        """取得遊戲狀態"""
+        return self.start
         
     def cleanTime(self) -> None:
         """分秒初始化"""
@@ -64,12 +68,30 @@ class MinConvert:
             _timeTotal = datetime.datetime.now() - self.firstTime
             print(f'恭喜你浪費人生 {_timeTotal.seconds}秒, 還有更有意義的事可以做XDD。')
 
-    def execution(self) -> None:
-        """執行流程"""
-        self.title()
-        while self.start:
-            self.resolve(self.parse(self.userInput()))
-            self.cleanTime()
+class interface: 
+    """介面"""
+    def Execution(self):
+        """程式"""
+        raise NotImplementedError
 
-MCS:object = MinConvert()
-MCS.execution()
+class minConvert(interface):
+    """古怪分鐘轉換流程"""
+    def Execution(self) -> None:
+        """執行"""
+        minConvertMethod.__init__(self)
+        minConvertMethod.title(self)
+        while minConvertMethod.gameState(self):
+            minConvertMethod.resolve(
+                self, minConvertMethod.parse(
+                    self, minConvertMethod.userInput(
+                        self)))
+            minConvertMethod.cleanTime(self)
+
+class person:
+    """使用者"""
+    def kusoGame(self, games: list):
+        for game in games:
+            game.Execution()
+
+gameList = [minConvert()]
+person().kusoGame(gameList)
