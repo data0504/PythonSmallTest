@@ -89,7 +89,7 @@ class minConvert(interface):
 
 class person:
     """使用者"""
-    def kusoGame(self, games: list):
+    def kusoGame(self, games: list) -> None:
         for game in games:
             game.Execution()
 
