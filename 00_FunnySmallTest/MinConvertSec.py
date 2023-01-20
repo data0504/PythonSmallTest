@@ -34,7 +34,6 @@ class minConvertMethod:
                 # 正規表達,清洗數字以外的值
                 _re_userValue: str = int(
                                     re.sub(r'[\D*?]','', _userInput))
-
                 self.start = False
             except (Exception, SystemExit, GeneratorExit) as e:
                 print(f'Error: 請輸入數字[0-9]\nError: {e}')
@@ -70,7 +69,7 @@ class minConvertMethod:
 
 class interface: 
     """介面"""
-    def Execution(self):
+    def Execution(self) -> None:
         """程式"""
         raise NotImplementedError
 
